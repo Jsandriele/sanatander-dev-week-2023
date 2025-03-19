@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_user")
-public class User<Feature> {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +29,7 @@ public class User<Feature> {
     private Card card;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Feature> feature;
+    private List<Features> feature;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<News> news;
@@ -66,11 +66,11 @@ public class User<Feature> {
         this.card = card;
     }
 
-    public List<Feature> getFeature() {
+    public List<Features> getFeature() {
         return feature;
     }
 
-    public void setFeature(List<Feature> feature) {
+    public void setFeatures(List<Features> feature) {
         this.feature = feature;
     }
 

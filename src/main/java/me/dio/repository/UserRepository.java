@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import me.dio.domain.model.User;
 
-@SuppressWarnings("rawtypes")
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
